@@ -46,11 +46,18 @@ RSpec.describe 'As a visitor' do
       visit astronauts_path
       save_and_open_page
 
-      within '#list_of_missions'
-      expect(page.all('.mission')[0]).to have_content(mission_1.title)
-      expect(page.all('.mission')[1]).to have_content(mission_2.title)
-      expect(page.all('.mission')[2]).to have_content(mission_4.title)
-      expect(page.all('.mission')[3]).to have_content(mission_3.title)
+      within '#mission-1' do
+        expect(page.all('.mission')[0]).to have_content(mission_1.title)
+      end
+      within '#mission-2' do
+        expect(page.all('.mission')[1]).to have_content(mission_2.title)
+      end
+      within '#mission-3' do
+        expect(page.all('.mission')[2]).to have_content(mission_4.title)
+      end
+      within '#mission-4' do
+        expect(page.all('.mission')[3]).to have_content(mission_3.title)
+      end
     end
   end
 

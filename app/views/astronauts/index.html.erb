@@ -13,7 +13,7 @@
 <section id="list_of_missions " class="mission">
   <% @missions.each do |mission| %>
   <ul>
-    <li id=>'mission-<=%mission.id %>'  <%= mission.title %></li>
+    <li id='mission-<%mission.id %>'>  <%= mission.title %></li>
   </ul>
   <% end %>
 </section>
